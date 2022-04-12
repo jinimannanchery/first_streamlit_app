@@ -6,5 +6,5 @@ streamlit.header ('Breakfast Menu')
 streamlit.text ('Dosa')
 streamlit.text ('Appam')
 streamlit.text ('Kappa Fish Curry')
-
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
