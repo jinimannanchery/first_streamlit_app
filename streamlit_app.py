@@ -23,19 +23,18 @@ streamlit.dataframe(fruits_to_show)
 import requests
 import snowflake.connector
 
-import snowflake.connector
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
-@st.experimental_singleton
+#@streamlit.experimental_singleton
 def init_connection():
-    return snowflake.connector.connect(**st.secrets["snowflake"])
+    return snowflake.connector.connect(**streamlit.secrets["snowflake"])
 
 conn = init_connection()
 
 # Perform query.
 # Uses st.experimental_memo to only rerun when the query changes or after 10 min.
-@st.experimental_memo(ttl=600)
+#@st.experimental_memo(ttl=600)
 def run_query(query):
     with conn.cursor() as cur:
         cur.execute(query)
