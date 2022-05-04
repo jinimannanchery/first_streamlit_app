@@ -23,8 +23,4 @@ streamlit.dataframe(fruits_to_show)
 import requests
 import snowflake.connector
 
-ctx = snowflake.connector.connect(
-    user='jinikadankavil',
-    password='zxcv@1234',
-    account='ye90206.ca-central-1.aws'
-    )
+
