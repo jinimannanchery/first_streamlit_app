@@ -20,11 +20,12 @@ my_fruit_list=my_fruit_list.set_index('Fruit')
 fruits_selected=streamlit.multiselect("Pick some  Fruits :" ,list(my_fruit_list.index),['Avocado','Strawberries'])
 fruits_to_show=my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
-import requests
+
 # new 
 streamlit.header('My fruityvise advice!')
 fruit_choice =streamlit.text_input('what fruit whould you like to have ?','kiwi')
 streamlit.write('The user entered ' ,fruit_choice)
+import requests
 fruityvice_response =requests.get("https://frutyvice.com/api/fruit/"+fruit_choice)
 #import snowflake.connector
 
