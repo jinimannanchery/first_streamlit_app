@@ -29,8 +29,10 @@ fruit_choice =streamlit.text_input('what fruit whould you like to have ?','kiwi'
 streamlit.write('The user entered ' ,fruit_choice)
 
 fruityvice_response =requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
-df = pandas.read_json(fruityvice_response.text)
-streamlit.dataframe(df)
+fruityvise_normalized=pandas.json_normalize(fruityvice_response.json())
+streamlit.dataframe(fruityvise_normalized)
+#df = pandas.read_json(fruityvice_response.text)
+#streamlit.dataframe(df)
 streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
