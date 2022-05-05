@@ -26,7 +26,7 @@ streamlit.header('My fruityvise advice!')
 fruit_choice =streamlit.text_input('what fruit whould you like to have ?','kiwi')
 streamlit.write('The user entered ' ,fruit_choice)
 import requests
-fruityvice_response =requests.get("https://frutyvice.com/api/fruit/"+fruit_choice)
+fruityvice_response =requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 #import snowflake.connector
 
 
