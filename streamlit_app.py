@@ -29,6 +29,7 @@ import requests
 fruityvice_response =requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 df = pandas.read_json(fruityvice_response.text)
 streamlit.dataframe(df)
+streamlit.stop()
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
