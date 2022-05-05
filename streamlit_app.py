@@ -29,6 +29,6 @@ import requests
 fruityvice_response =requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 df = pandas.read_json(fruityvice_response.text)
 streamlit.dataframe(df)
-#import snowflake.connector
+import snowflake.connector
 
 
